@@ -2,40 +2,28 @@
 class SitemillsCli < Formula
   desc "Build, deploy, and manage SiteMills apps from the command-line"
   homepage "https://github.com/SiteMills/sitemills-cli"
-  version "1.0.2"
+  version "1.0.4"
 
   on_macos do
-    # One x86_64 build; Apple Silicon runs it under Rosetta 2.
     on_intel do
-      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.2/sitemills-macos"
-      sha256 "4234b3ae35fcae02e5f91370c38974966a021bcf9cd0706eede2a06e432ebb42"
+      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.4/sitemills-macos"
+      sha256 "8c077697be4ae39d6aa4d2385017e62ebcd606628c06f38e27131cbf96fb2511"
     end
     on_arm do
-      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.2/sitemills-macos"
-      sha256 "4234b3ae35fcae02e5f91370c38974966a021bcf9cd0706eede2a06e432ebb42"
+      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.4/sitemills-macos-arm64"
+      sha256 "0d2477087c699225453582d126da62fe2c0a24eef5b26fdad4e14fcf05f10859"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.2/sitemills-linux"
-      sha256 "13f7cacfe6d0c3ce4f59847052fc34203b14aacb24afdc23946a1598361b8e28"
+      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.4/sitemills-linux"
+      sha256 "fd63c27785e93784675b17993a93595e86abb67a433e7f11d297cdd91accee96"
     end
   end
 
   def install
-    bin.install (OS.mac? ? "sitemills-macos" : "sitemills-linux") => "sitemills-cli"
-  end
-
-  def caveats
-    on_macos do
-      on_arm do
-        <<~EOS
-          This build runs under Rosetta 2 on Apple Silicon. If it is not installed:
-            softwareupdate --install-rosetta --agree-to-license
-        EOS
-      end
-    end
+    bin.install Dir["sitemills-*"].first => "sitemills-cli"
   end
 
   test do
