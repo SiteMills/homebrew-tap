@@ -2,23 +2,23 @@
 class SitemillsCli < Formula
   desc "Build, deploy, and manage SiteMills apps from the command-line"
   homepage "https://github.com/SiteMills/sitemills-cli"
-  version "1.0.19"
+  version "1.0.20"
 
   on_macos do
     on_intel do
-      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.19/sitemills-macos"
-      sha256 "37df2e5856bddbc4afd7a7d68e35120ff268d4cf270eb46a3a946b282e48e69b"
+      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.20/sitemills-macos"
+      sha256 "3548939da8ef92c55b28c6d5b870dcf19dcef435a67135a0d8c5f5aec7156dfd"
     end
     on_arm do
-      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.19/sitemills-macos-arm64"
-      sha256 "f362d9fd4a56a51d308d21ce2b5ddc35730569047bb7207fd0ff7a42aad4c5d0"
+      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.20/sitemills-macos-arm64"
+      sha256 "801345ccc671609b145b8a9850fa887762233d525c5dc0bfaf6b3f013ed8926b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.19/sitemills-linux"
-      sha256 "80533979146b071480bd6a567e7d7c51725a71994414ef41ddd2512dab9ffdef"
+      url "https://github.com/SiteMills/sitemills-cli/releases/download/v1.0.20/sitemills-linux"
+      sha256 "4f7d913a1ff739892bc39f839424cb4005a7c49c3cca08b280eef9b49bc6b402"
     end
   end
 
